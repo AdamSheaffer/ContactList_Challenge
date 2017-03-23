@@ -136,5 +136,15 @@ namespace ContactList_Challenge.Tests.Repositories
         {
             _repo.GetById(Guid.NewGuid().ToString());
         }
+
+        [TestMethod]
+        public void RepoShouldGetContactByValidId()
+        {
+            var contact = _contacts[1];
+            var result = _repo.GetById(contact.Id.ToString());
+
+            Assert.AreEqual(contact, result);
+        }
     }
+
 }
