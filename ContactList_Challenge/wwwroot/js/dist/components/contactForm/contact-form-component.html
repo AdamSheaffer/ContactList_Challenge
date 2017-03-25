@@ -13,11 +13,11 @@
             <ng-form name="contactForm" layout="row" layout-padding layout-wrap>
                 <md-input-container flex="50">
                     <label>First name</label>
-                    <input ng-model="vm.contact.firstName" required name="first" />
+                    <input ng-model="vm.contact.firstName" required name="first" md-maxlength="15"/>
                 </md-input-container>
                 <md-input-container flex="50">
                     <label>Last name</label>
-                    <input ng-model="vm.contact.lastName" name="last" />
+                    <input ng-model="vm.contact.lastName" name="last" md-maxlength="15"/>
                 </md-input-container>
                 <md-input-container flex="50">
                     <label>Phone</label>
@@ -25,7 +25,8 @@
                     <!--http://stackoverflow.com/questions/123559/a-comprehensive-regex-for-phone-number-validation/20971688#20971688-->
                     <input ng-model="vm.contact.phoneNumber" 
                            required 
-                           name="phone" 
+                           name="phone"
+                           maxlength="17" 
                            ng-pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i" />
                 </md-input-container>
                 <md-input-container flex="50">
