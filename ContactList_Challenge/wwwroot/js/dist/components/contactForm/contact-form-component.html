@@ -21,7 +21,12 @@
                 </md-input-container>
                 <md-input-container flex="50">
                     <label>Phone</label>
-                    <input ng-model="vm.contact.phoneNumber" required name="phone" />
+                    <!--The most comprehensive phone validation I found online-->
+                    <!--http://stackoverflow.com/questions/123559/a-comprehensive-regex-for-phone-number-validation/20971688#20971688-->
+                    <input ng-model="vm.contact.phoneNumber" 
+                           required 
+                           name="phone" 
+                           ng-pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i" />
                 </md-input-container>
                 <md-input-container flex="50">
                     <label>Email</label>
