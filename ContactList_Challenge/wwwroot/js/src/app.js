@@ -1,4 +1,6 @@
-﻿// Components
+﻿import 'angular-material';
+
+// Components
 import { appComponent } from './components/app/app.component.js';
 import { contactForm } from './components/contactForm/contactForm.component.js';
 
