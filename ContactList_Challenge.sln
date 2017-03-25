@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList_Challenge", "ContactList_Challenge\ContactList_Challenge.csproj", "{19EE7D2A-7A8F-45F3-9D66-DEAFB67EECC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList_Challenge.Tests", "ContactList_Challenge.Tests\ContactList_Challenge.Tests.csproj", "{7C0D1FFD-A1DE-42AD-B324-BDE7B3781997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19EE7D2A-7A8F-45F3-9D66-DEAFB67EECC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EE7D2A-7A8F-45F3-9D66-DEAFB67EECC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EE7D2A-7A8F-45F3-9D66-DEAFB67EECC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EE7D2A-7A8F-45F3-9D66-DEAFB67EECC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0D1FFD-A1DE-42AD-B324-BDE7B3781997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0D1FFD-A1DE-42AD-B324-BDE7B3781997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0D1FFD-A1DE-42AD-B324-BDE7B3781997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0D1FFD-A1DE-42AD-B324-BDE7B3781997}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
