@@ -1,0 +1,87 @@
+<div layout="row" 
+     layout-align="space-between start"
+     flex 
+     class="md-padding" 
+     id="contact-form-component" 
+     layout-wrap 
+     layout-margin>
+    <md-content flex="100" flex-gt-md="35" class="md-whiteframe-3dp">
+        <div>
+            <div flex layout="row" layout-align="center">
+                <md-icon class="contact-form-avatar">account_circle</md-icon>
+            </div>
+            <ng-form name="contactForm" layout="row" layout-padding layout-wrap>
+                <md-input-container flex="50">
+                    <label>First name</label>
+                    <input ng-model="vm.contact.firstName" required name="first" />
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Last name</label>
+                    <input ng-model="vm.contact.lastName" name="last" />
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Phone</label>
+                    <input ng-model="vm.contact.phoneNumber" required name="phone" />
+                </md-input-container>
+                <md-input-container flex="50">
+                    <label>Email</label>
+                    <input ng-model="vm.contact.email" name="email" type="email"/>
+                </md-input-container>
+                <md-input-container flex="100">
+                    <label>Address 1</label>
+                    <input ng-model="vm.contact.address1" name="address1" />
+                </md-input-container>
+                <md-input-container flex="100">
+                    <label>Address 2</label>
+                    <input ng-model="vm.contact.address2" name="address2" />
+                </md-input-container>
+                <div flex="100" layout="row" layout-align="space-between center">
+                    <div>
+                        <md-button class="md-accent" ng-if="vm.contactBeingEdited" ng-click="vm.resetContact()">
+                            Cancel
+                        </md-button>
+                    </div>
+                    <div>
+                        <md-button class="md-fab" ng-disabled="contactForm.$invalid" ng-click="vm.submitContact()">
+                            <md-icon>add</md-icon>
+                            <md-tooltip>Submit</md-tooltip>
+                        </md-button>
+                    </div>
+                </div>
+            </ng-form>
+        </div>
+    </md-content>
+    <md-content flex="100" flex-gt-md="60" class="md-whiteframe-3dp">
+        <md-list>
+            <md-list-item 
+                ng-repeat="contact in vm.contacts | orderBy: 'firstName' track by contact.id"
+                 ng-class="{ 'selected-list-item': contact === vm.contactBeingEdited, 'md-whiteframe-6dp': contact === vm.contactBeingEdited }">
+                <div class="md-list-item-text" layout="row" layout-align="start center" flex>
+                    <div flex="35" layout="row">
+                        <div>
+                            <md-icon class="md-avatar contact-list-avatar">person</md-icon>
+                        </div>
+                        <h5>{{contact.firstName}} {{contact.lastName}}</h5>
+                    </div>
+                    <p flex="25" class="md-body-2">{{contact.phoneNumber | phone}}</p>
+                    <p flex="25" class="md-body-2">{{contact.email}}</p>
+                    <div flex="15" layout="row" layout-align="end center">
+                        <div>
+                            <md-button class="md-icon-button" ng-click="vm.selectForEdit(contact)">
+                                <md-icon>edit</md-icon>
+                                <md-tooltip>Edit</md-tooltip>
+                            </md-button>
+                        </div>
+                        <div>
+                            <md-button class="md-icon-button" ng-disabled="contact === vm.contactBeingEdited" ng-click="vm.deleteContact(contact)">
+                                <md-icon>delete</md-icon>
+                                <md-tooltip>Delete</md-tooltip>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

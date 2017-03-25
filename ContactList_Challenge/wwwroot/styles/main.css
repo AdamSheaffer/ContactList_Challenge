@@ -1,0 +1,14 @@
+﻿.contact-list-avatar {
+    font-size: 40px;
+    color: rgb(89, 226, 168);
+}
+
+.contact-form-avatar {
+    font-size: 100px;
+    height: 100px;
+    padding-right: 75px;
+}
+
+.selected-list-item {
+    background-color: lightgray;
+}
