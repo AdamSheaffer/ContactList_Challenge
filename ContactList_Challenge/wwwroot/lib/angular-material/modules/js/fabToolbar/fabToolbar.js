@@ -2,7 +2,7 @@
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.3
+ * v1.0.9
  */
 (function( window, angular, undefined ){
 "use strict";
@@ -19,6 +19,7 @@
     .module('material.components.fabToolbar', [
       'material.core',
       'material.components.fabShared',
+      'material.components.fabTrigger',
       'material.components.fabActions'
     ])
 
@@ -40,7 +41,7 @@
    *
    * @description
    *
-   * The `<md-fab-toolbar>` directive is used to present a toolbar of elements (usually `<md-button>`s)
+   * The `<md-fab-toolbar>` directive is used present a toolbar of elements (usually `<md-button>`s)
    * for quick access to common actions when a floating action button is activated (via click or
    * keyboard navigation).
    *
@@ -59,20 +60,18 @@
    * <hljs lang="html">
    * <md-fab-toolbar md-direction='left'>
    *   <md-fab-trigger>
-   *     <md-button aria-label="Add..."><md-icon md-svg-src="/img/icons/plus.svg"></md-icon></md-button>
+   *     <md-button aria-label="Add..."><md-icon icon="/img/icons/plus.svg"></md-icon></md-button>
    *   </md-fab-trigger>
    *
-   *   <md-toolbar>
-   *    <md-fab-actions>
-   *      <md-button aria-label="Add User">
-   *        <md-icon md-svg-src="/img/icons/user.svg"></md-icon>
-   *      </md-button>
+   *   <md-fab-actions>
+   *     <md-button aria-label="Add User">
+   *       <md-icon icon="/img/icons/user.svg"></md-icon>
+   *     </md-button>
    *
-   *      <md-button aria-label="Add Group">
-   *        <md-icon md-svg-src="/img/icons/group.svg"></md-icon>
-   *      </md-button>
-   *    </md-fab-actions>
-   *   </md-toolbar>
+   *     <md-button aria-label="Add Group">
+   *       <md-icon icon="/img/icons/group.svg"></md-icon>
+   *     </md-button>
+   *   </md-fab-actions>
    * </md-fab-toolbar>
    * </hljs>
    *
@@ -94,7 +93,7 @@
       },
 
       bindToController: true,
-      controller: 'MdFabController',
+      controller: 'FabController',
       controllerAs: 'vm',
 
       link: link
@@ -145,7 +144,7 @@
         // If we're open
         if (ctrl.isOpen) {
           // Turn on toolbar pointer events when closed
-          toolbarElement.style.pointerEvents = 'inherit';
+          toolbarElement.style.pointerEvents = 'initial';
 
           backgroundElement.style.width = triggerElement.offsetWidth + 'px';
           backgroundElement.style.height = triggerElement.offsetHeight + 'px';
@@ -201,8 +200,7 @@
         runAnimation(element, className, done);
         done();
       }
-    };
+    }
   }
 })();
-
 })(window, window.angular);

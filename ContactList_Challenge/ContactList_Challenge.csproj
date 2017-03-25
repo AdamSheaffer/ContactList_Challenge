@@ -258,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="contactlistsnapshop.PNG" />
     <Content Include="wwwroot\js\src\app.js" />
     <Content Include="wwwroot\js\src\components\app\app-component.html" />
     <Content Include="wwwroot\js\src\components\app\app.component.js" />

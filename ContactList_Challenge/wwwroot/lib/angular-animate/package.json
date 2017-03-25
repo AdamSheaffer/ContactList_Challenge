@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "angular-animate@1.5.9",
+        "raw": "angular-animate@1.5.5",
         "scope": null,
         "escapedName": "angular-animate",
         "name": "angular-animate",
-        "rawSpec": "1.5.9",
-        "spec": "1.5.9",
+        "rawSpec": "1.5.5",
+        "spec": "1.5.5",
         "type": "version"
       },
       "C:\\Users\\jj06896\\Documents\\Visual Studio 2015\\Projects\\ContactList_Challenge\\ContactList_Challenge"
     ]
   ],
-  "_from": "angular-animate@1.5.9",
-  "_id": "angular-animate@1.5.9",
+  "_from": "angular-animate@1.5.5",
+  "_id": "angular-animate@1.5.5",
   "_inCache": true,
   "_location": "/angular-animate",
-  "_nodeVersion": "4.4.7",
+  "_nodeVersion": "4.4.3",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/angular-animate-1.5.9.tgz_1480018642751_0.4278404542710632"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-animate-1.5.5.tgz_1460972857526_0.7723738502245396"
   },
   "_npmUser": {
     "name": "angularcore",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "2.15.8",
+  "_npmVersion": "2.15.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "angular-animate@1.5.9",
+    "raw": "angular-animate@1.5.5",
     "scope": null,
     "escapedName": "angular-animate",
     "name": "angular-animate",
-    "rawSpec": "1.5.9",
-    "spec": "1.5.9",
+    "rawSpec": "1.5.5",
+    "spec": "1.5.5",
     "type": "version"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.5.9.tgz",
-  "_shasum": "c958d524f9333a48abdaefb32947c7e611f54453",
+  "_resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.5.5.tgz",
+  "_shasum": "6641ba517d37b8158578d99178e1e9a6bed19b75",
   "_shrinkwrap": null,
-  "_spec": "angular-animate@1.5.9",
+  "_spec": "angular-animate@1.5.5",
   "_where": "C:\\Users\\jj06896\\Documents\\Visual Studio 2015\\Projects\\ContactList_Challenge\\ContactList_Challenge",
   "author": {
     "name": "Angular Core Team",
@@ -58,20 +58,11 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "c958d524f9333a48abdaefb32947c7e611f54453",
-    "tarball": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.5.9.tgz"
+    "shasum": "6641ba517d37b8158578d99178e1e9a6bed19b75",
+    "tarball": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.5.5.tgz"
   },
-  "gitHead": "0fc827eb7723b82d9db2415ccc68d453673103cb",
+  "gitHead": "39c4ea7a81ed05b09229f5961e31e1d9dc251bf8",
   "homepage": "http://angularjs.org",
-  "jspm": {
-    "shim": {
-      "angular-animate": {
-        "deps": [
-          "angular"
-        ]
-      }
-    }
-  },
   "keywords": [
     "angular",
     "framework",
@@ -105,5 +96,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.5.9"
+  "version": "1.5.5"
 }

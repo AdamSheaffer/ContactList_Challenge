@@ -2,7 +2,7 @@
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.3
+ * v1.0.9
  */
 (function( window, angular, undefined ){
 "use strict";
@@ -12,8 +12,6 @@
  * @name material.components.radioButton
  * @description radioButton module!
  */
-mdRadioGroupDirective['$inject'] = ["$mdUtil", "$mdConstant", "$mdTheming", "$timeout"];
-mdRadioButtonDirective['$inject'] = ["$mdAria", "$mdUtil", "$mdTheming"];
 angular.module('material.components.radioButton', [
   'material.core'
 ])
@@ -71,36 +69,28 @@ function mdRadioGroupDirective($mdUtil, $mdConstant, $mdTheming, $timeout) {
   };
 
   function linkRadioGroup(scope, element, attr, ctrls) {
-    element.addClass('_md');     // private md component indicator for styling
     $mdTheming(element);
-
     var rgCtrl = ctrls[0];
     var ngModelCtrl = ctrls[1] || $mdUtil.fakeNgModel();
 
     rgCtrl.init(ngModelCtrl);
 
     scope.mouseActive = false;
-
-    element
-      .attr({
-        'role': 'radiogroup',
-        'tabIndex': element.attr('tabindex') || '0'
-      })
-      .on('keydown', keydownListener)
-      .on('mousedown', function(event) {
-        scope.mouseActive = true;
-        $timeout(function() {
-          scope.mouseActive = false;
-        }, 100);
-      })
-      .on('focus', function() {
-        if(scope.mouseActive === false) {
-          rgCtrl.$element.addClass('md-focused');
-        }
-      })
-      .on('blur', function() {
-        rgCtrl.$element.removeClass('md-focused');
-      });
+    element.attr({
+              'role': 'radiogroup',
+              'tabIndex': element.attr('tabindex') || '0'
+            })
+            .on('keydown', keydownListener)
+            .on('mousedown', function(event) {
+              scope.mouseActive = true;
+              $timeout(function() {
+                scope.mouseActive = false;
+              }, 100);
+            })
+            .on('focus', function() {
+              if(scope.mouseActive === false) { rgCtrl.$element.addClass('md-focused'); }
+            })
+            .on('blur', function() { rgCtrl.$element.removeClass('md-focused'); });
 
     /**
      *
@@ -191,9 +181,6 @@ function mdRadioGroupDirective($mdUtil, $mdConstant, $mdTheming, $timeout) {
       },
       setActiveDescendant: function (radioId) {
         this.$element.attr('aria-activedescendant', radioId);
-      },
-      isDisabled: function() {
-        return this.$element[0].hasAttribute('disabled');
       }
     };
   }
@@ -216,10 +203,13 @@ function mdRadioGroupDirective($mdUtil, $mdConstant, $mdTheming, $timeout) {
 
       // Activate radioButton's click listener (triggerHandler won't create a real click event)
       angular.element(target).triggerHandler('click');
+
+
     }
   }
 
 }
+mdRadioGroupDirective.$inject = ["$mdUtil", "$mdConstant", "$mdTheming", "$timeout"];
 
 /**
  * @ngdoc directive
@@ -281,22 +271,14 @@ function mdRadioButtonDirective($mdAria, $mdUtil, $mdTheming) {
     $mdTheming(element);
     configureAria(element, scope);
 
-    // ngAria overwrites the aria-checked inside a $watch for ngValue.
-    // We should defer the initialization until all the watches have fired.
-    // This can also be fixed by removing the `lastChecked` check, but that'll
-    // cause more DOM manipulation on each digest.
-    if (attr.ngValue) {
-      $mdUtil.nextTick(initialize, false);
-    } else {
-      initialize();
-    }
+    initialize();
 
     /**
-     * Initializes the component.
+     *
      */
-    function initialize() {
-      if (!rgCtrl) {
-        throw 'RadioButton: No RadioGroupController could be found.';
+    function initialize(controller) {
+      if ( !rgCtrl ) {
+        throw 'RadioGroupController not found.';
       }
 
       rgCtrl.add(render);
@@ -310,10 +292,10 @@ function mdRadioButtonDirective($mdAria, $mdUtil, $mdTheming) {
     }
 
     /**
-     * On click functionality.
+     *
      */
     function listener(ev) {
-      if (element[0].hasAttribute('disabled') || rgCtrl.isDisabled()) return;
+      if (element[0].hasAttribute('disabled')) return;
 
       scope.$apply(function() {
         rgCtrl.setViewValue(attr.value, ev && ev.type);
@@ -325,39 +307,61 @@ function mdRadioButtonDirective($mdAria, $mdUtil, $mdTheming) {
      *  Update the `aria-activedescendant` attribute.
      */
     function render() {
-      var checked = rgCtrl.getViewValue() == attr.value;
-
-      if (checked === lastChecked) return;
-
-      if (element[0].parentNode.nodeName.toLowerCase() !== 'md-radio-group') {
-        // If the radioButton is inside a div, then add class so highlighting will work
-        element.parent().toggleClass(CHECKED_CSS, checked);
-      }
-
-      if (checked) {
-        rgCtrl.setActiveDescendant(element.attr('id'));
+      var checked = (rgCtrl.getViewValue() == attr.value);
+      if (checked === lastChecked) {
+        return;
       }
 
       lastChecked = checked;
+      element.attr('aria-checked', checked);
 
-      element
-        .attr('aria-checked', checked)
-        .toggleClass(CHECKED_CSS, checked);
+      if (checked) {
+        markParentAsChecked(true);
+        element.addClass(CHECKED_CSS);
+
+        rgCtrl.setActiveDescendant(element.attr('id'));
+
+      } else {
+        markParentAsChecked(false);
+        element.removeClass(CHECKED_CSS);
+      }
+
+      /**
+       * If the radioButton is inside a div, then add class so highlighting will work...
+       */
+      function markParentAsChecked(addClass ) {
+        if ( element.parent()[0].nodeName != "MD-RADIO-GROUP") {
+          element.parent()[ !!addClass ? 'addClass' : 'removeClass'](CHECKED_CSS);
+        }
+
+      }
     }
 
     /**
      * Inject ARIA-specific attributes appropriate for each radio button
      */
-    function configureAria(element, scope){
+    function configureAria( element, scope ){
+      scope.ariaId = buildAriaID();
+
       element.attr({
-        id: attr.id || 'radio_' + $mdUtil.nextUid(),
-        role: 'radio',
-        'aria-checked': 'false'
+        'id' :  scope.ariaId,
+        'role' : 'radio',
+        'aria-checked' : 'false'
       });
 
       $mdAria.expectWithText(element, 'aria-label');
+
+      /**
+       * Build a unique ID for each radio button that will be used with aria-activedescendant.
+       * Preserve existing ID if already specified.
+       * @returns {*|string}
+       */
+      function buildAriaID() {
+        return attr.id || ( 'radio' + "_" + $mdUtil.nextUid() );
+      }
     }
   }
 }
+mdRadioButtonDirective.$inject = ["$mdAria", "$mdUtil", "$mdTheming"];
 
 })(window, window.angular);

@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "angular-material",
+        "raw": "angular-material@1.0.9",
         "scope": null,
         "escapedName": "angular-material",
         "name": "angular-material",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "1.0.9",
+        "spec": "1.0.9",
+        "type": "version"
       },
       "C:\\Users\\jj06896\\Documents\\Visual Studio 2015\\Projects\\ContactList_Challenge\\ContactList_Challenge"
     ]
   ],
-  "_from": "angular-material@latest",
-  "_id": "angular-material@1.1.3",
+  "_from": "angular-material@1.0.9",
+  "_id": "angular-material@1.0.9",
   "_inCache": true,
   "_location": "/angular-material",
-  "_nodeVersion": "5.4.1",
+  "_nodeVersion": "5.6.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/angular-material-1.1.3.tgz_1485985603551_0.4688393264077604"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-material-1.0.9.tgz_1464720467222_0.06480797007679939"
   },
   "_npmUser": {
     "name": "angularcore",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "3.10.6",
+  "_npmVersion": "3.6.0",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "angular-material",
+    "raw": "angular-material@1.0.9",
     "scope": null,
     "escapedName": "angular-material",
     "name": "angular-material",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "1.0.9",
+    "spec": "1.0.9",
+    "type": "version"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.1.3.tgz",
-  "_shasum": "b466d53aaa42c1555766a1ded53a28baeb7b2fe6",
+  "_resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.9.tgz",
+  "_shasum": "00e816f6381ffd164bc7e56dcf56549f0ff64d6c",
   "_shrinkwrap": null,
-  "_spec": "angular-material",
+  "_spec": "angular-material@1.0.9",
   "_where": "C:\\Users\\jj06896\\Documents\\Visual Studio 2015\\Projects\\ContactList_Challenge\\ContactList_Challenge",
   "bugs": {
     "url": "https://github.com/angular/material/issues"
@@ -54,11 +54,11 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "b466d53aaa42c1555766a1ded53a28baeb7b2fe6",
-    "tarball": "https://registry.npmjs.org/angular-material/-/angular-material-1.1.3.tgz"
+    "shasum": "00e816f6381ffd164bc7e56dcf56549f0ff64d6c",
+    "tarball": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.9.tgz"
   },
   "format": "cjs",
-  "gitHead": "a5a5a0de1454a93c71d6dc9c8e8aecbaa221b927",
+  "gitHead": "a8c93a292d7d07cb1057d3b8bf1ef85d654d7241",
   "homepage": "https://material.angularjs.org",
   "jspm": {
     "dependencies": {
@@ -108,5 +108,5 @@
     "url": "git://github.com/angular/material.git"
   },
   "scripts": {},
-  "version": "1.1.3"
+  "version": "1.0.9"
 }
