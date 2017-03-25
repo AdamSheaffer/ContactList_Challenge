@@ -16,7 +16,7 @@ namespace ContactList_Challenge.Tests.Data
 
             Assert.IsNotNull(db);
             Assert.IsNotNull(db.Contacts);
-            Assert.AreEqual(3, db.Contacts.Count);
+            Assert.AreEqual(8, db.Contacts.Count);
         }
     }
 }

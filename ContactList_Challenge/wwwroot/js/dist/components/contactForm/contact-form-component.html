@@ -7,8 +7,8 @@
      layout-margin>
     <md-content flex="100" flex-gt-md="35" class="md-whiteframe-3dp">
         <div>
-            <div flex layout="row" layout-align="center">
-                <md-icon class="contact-form-avatar">account_circle</md-icon>
+            <div layout="row" layout-align="center">
+                <md-icon flex class="contact-form-avatar">account_circle</md-icon>
             </div>
             <ng-form name="contactForm" layout="row" layout-padding layout-wrap>
                 <md-input-container flex="50">
@@ -53,9 +53,8 @@
     </md-content>
     <md-content flex="100" flex-gt-md="60" class="md-whiteframe-3dp">
         <md-list>
-            <md-list-item 
-                ng-repeat="contact in vm.contacts | orderBy: 'firstName' track by contact.id"
-                 ng-class="{ 'selected-list-item': contact === vm.contactBeingEdited, 'md-whiteframe-6dp': contact === vm.contactBeingEdited }">
+            <md-list-item ng-repeat="contact in vm.contacts | orderBy: 'firstName' track by contact.id"
+                          ng-class="{ 'selected-list-item': contact === vm.contactBeingEdited, 'md-whiteframe-6dp': contact === vm.contactBeingEdited }">
                 <div class="md-list-item-text" layout="row" layout-align="start center" flex>
                     <div flex="35" layout="row">
                         <div>
