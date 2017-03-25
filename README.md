@@ -27,4 +27,4 @@ Visual Studio (Any version. Community Edition is fine)
 ```
 
 
-![snapshot](/ContactList_Challenge/ContactList_Challenge/contactlistsnapshop.PNG)
+![snapshot](/ContactList_Challenge/contactlistsnapshop.PNG)
