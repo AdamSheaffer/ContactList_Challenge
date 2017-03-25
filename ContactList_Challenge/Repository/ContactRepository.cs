@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using ContactList_Challenge.Interfaces;
 using ContactList_Challenge.Models;
-using ContactList_Challenge.Data;
 
 namespace ContactList_Challenge.Repository
 {
-    public class ContactRepository
+    public class ContactRepository : IContactRepository
     {
         private IContactsDb _db;
 
@@ -25,7 +23,7 @@ namespace ContactList_Challenge.Repository
         public Contact GetById(string id)
         {
             var guid = Guid.Parse(id);
-            return _db.Contacts.First(c => c.Id == guid);
+            return _db.Contacts.FirstOrDefault(c => c.Id == guid);
         }
 
         public Contact AddOrUpdate(Contact contact)

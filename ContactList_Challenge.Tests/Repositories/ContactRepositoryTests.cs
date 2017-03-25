@@ -131,10 +131,11 @@ namespace ContactList_Challenge.Tests.Repositories
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void RepoShouldThrowExceptionIfGettingByNotFoundGuid()
+        public void RepoShouldReturnNullOnNotFoundGuid()
         {
-            _repo.GetById(Guid.NewGuid().ToString());
+            var contact = _repo.GetById(Guid.NewGuid().ToString());
+
+            Assert.IsNull(contact);
         }
 
         [TestMethod]

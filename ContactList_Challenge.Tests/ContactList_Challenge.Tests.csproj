@@ -101,10 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ContactControllerTests.cs" />
     <Compile Include="Data\ContactsDbTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
     <Compile Include="Repositories\ContactRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>

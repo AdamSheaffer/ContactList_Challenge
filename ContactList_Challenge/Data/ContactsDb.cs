@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using ContactList_Challenge.Models;
 using ContactList_Challenge.Interfaces;
 
@@ -23,7 +22,7 @@ namespace ContactList_Challenge.Data
                     Address1 = "636 Nixon Ave",
                     City = "Los Angeles",
                     State = "CA",
-                    PhoneNumber = "(917) 367-4789"
+                    PhoneNumber = "9173674789"
                 },
                 new Contact()
                 {
@@ -34,7 +33,7 @@ namespace ContactList_Challenge.Data
                     Address1 = "1045 Johnson Ave",
                     City = "Los Angeles",
                     State = "CA",
-                    PhoneNumber = "(917) 678-4222"
+                    PhoneNumber = "9176784222"
                 },
                 new Contact()
                 {
@@ -45,8 +44,62 @@ namespace ContactList_Challenge.Data
                     Address1 = "1 Electronic Cir",
                     City = "Malibu",
                     State = "CA",
-                    PhoneNumber = "(917) 298-9245"
-                }
+                    PhoneNumber = "9172989245"
+                },
+                new Contact()
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "Bunny",
+                    LastName = "Lebowski",
+                    Email = "IOU@Treehorn.org",
+                    Address1 = "15 Lebowski Ave",
+                    City = "Malibu",
+                    State = "CA",
+                    PhoneNumber = "9176542945"
+                },
+                new Contact()
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "The Dude",
+                    Email = "The@Dude.gov",
+                    Address1 = "1 Nixon Ct",
+                    City = "Los Angeles",
+                    State = "CA",
+                    PhoneNumber = "9172349245"
+                },
+                new Contact()
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "Ulee",
+                    LastName = "Kunkel",
+                    Email = "Logjammer2@Treehorn.org",
+                    Address1 = "1 Electronic Cir",
+                    City = "Malibu",
+                    State = "CA",
+                    PhoneNumber = "9172889245"
+                },
+                new Contact()
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "Walter",
+                    LastName = "Sobchak",
+                    Email = "DirtyUndies@TheWhites.net",
+                    Address1 = "456 Veterans Dr",
+                    City = "Malibu",
+                    State = "CA",
+                    PhoneNumber = "9172879233"
+                },
+                new Contact()
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "Brandt",
+                    LastName = "??",
+                    Email = "Brandt@unknown.com",
+                    Address1 = "876 Lebowski Dr",
+                    City = "Malibu",
+                    State = "CA",
+                    PhoneNumber = "9172879233"
+                },
             };
         }
 

@@ -3,36 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-
+    <title>Contact List</title>
+    <script src="~/wwwroot/lib/angular/angular.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/wwwroot/lib/angular-material/angular-material.css" rel="stylesheet" />
+    <link href="~/wwwroot/styles/main.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <div ng-cloak>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
-
+    <script src="~/wwwroot/lib/babel/dist/polyfill.js"></script>
+    <script src="~/wwwroot/lib/angular-animate/angular-animate.js"></script>
+    <script src="~/wwwroot/lib/angular-aria/angular-aria.js"></script>
+    <script src="~/wwwroot/lib/angular-material/angular-material.js"></script>
+    <script src="~/wwwroot/lib/systemjs/dist/system.js"></script>
+    <script src="~/wwwroot/system.conf.js"></script>
+    <script type="text/javascript">
+    System.import('js/dist/app.js');
+    </script>
 
 </body>
 </html>
